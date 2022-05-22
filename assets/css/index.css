@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Font", Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.full-y {
+  height: 100vh;
+}
+
+.full-x {
+  width: 100vw;
+}
+
+.padding {
+  padding: 12px;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.flex, .flex-center, .flex-justify {
+  display: flex;
+}
+
+.flex-justify {
+  justify-content: space-between;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+  gap: 12px;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.np {
+  pointer-events: none;
+}
+
+@media screen and (max-width: 40em) {
+  .desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 50em) {
+  .tablet {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

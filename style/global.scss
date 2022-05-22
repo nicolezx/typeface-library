@@ -1,0 +1,156 @@
+// @font-face declarations
+
+// @font-face {
+//   font-family: "Font";
+//   src: url("/assets/fonts/font.woff");
+//   font-style: normal;
+// }
+
+// Variables ----------------------
+
+$font-primary: "Font", Arial, sans-serif;
+$black: #000000;
+$accent: #8c7d71;
+$grey: #cccccc;
+$white: #ffffff;
+$white-50: rgba(255, 255, 255, 0.5);
+
+$padding: 12px;
+$padding-xs: 8px;
+$padding-2x: calc(2 * $padding);
+$padding-3x: calc(3 * $padding);
+
+$gap: 12px;
+$text-body: 16px;
+$heading-body: 32px;
+$heading-body-line: calc(1 * $text-body);
+$text-body-line: calc(1.25 * $text-body);
+$text-xs: 12px;
+
+$transition: 0.3s ease-in-out;
+$opacity: 0.3;
+
+$mobile: 40em; // 640px
+$tablet: 50em; // 800px
+
+// Resets -------------------------
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: $text-body;
+  font-family: $font-primary;
+  font-weight: 400;
+  letter-spacing: 0em;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: $text-body;
+  line-height: $heading-body-line;
+}
+
+// Sizing -------------------------
+
+.full-y {
+  height: 100vh;
+}
+
+.full-x {
+  width: 100vw;
+}
+
+// Spacing ------------------------
+
+.padding {
+  padding: $padding;
+}
+
+// Position -----------------------
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+// Flexbox ------------------------
+
+.flex {
+  display: flex;
+}
+
+.flex-justify {
+  @extend .flex;
+  justify-content: space-between;
+}
+
+.flex-center {
+  @extend .flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+// Grid ---------------------------
+
+.grid {
+  display: grid;
+  width: 100%;
+  gap: $padding;
+}
+
+// Elements -----------------------
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+// Pointer events -----------------
+
+.np {
+  pointer-events: none;
+}
+
+// Responsive ---------------------
+
+.desktop {
+  @media screen and (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.mobile {
+  @media screen and (min-width: $mobile) {
+    display: none;
+  }
+}
+
+.tablet {
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
