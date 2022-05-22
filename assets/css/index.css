@@ -113,20 +113,23 @@ img {
     gap: 24px;
   }
 }
+@media screen and (max-width: 40em) {
+  body {
+    margin-top: 57.59px;
+  }
+}
 body > * {
   padding: 12px;
 }
 
 header {
-  position: sticky;
-  top: 0;
-  left: 0;
   flex-shrink: 0;
   transition: all 0.3s ease-in-out;
 }
 @media screen and (max-width: 40em) {
   header {
-    margin-bottom: 12px;
+    position: fixed;
+    inset: 0 0 auto 0;
     background: white;
     box-shadow: 0 0 5px #cccccc;
   }
@@ -137,6 +140,13 @@ header {
   height: 100vh;
   gap: 12px;
   overflow-y: scroll;
+}
+@media screen and (max-width: 40em) {
+  .content {
+    height: calc(100vh - 57.59px);
+    padding-top: 24px;
+    gap: 24px;
+  }
 }
 
 .content > .channel,

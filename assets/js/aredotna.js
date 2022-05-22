@@ -24,6 +24,14 @@ window.onload = function () {
         channel.id = blockParent.title;
         channel.dataset.toggled = false;
 
+        gsap.from(".channel", {
+          // opacity: 0,
+          // y: 50,
+          // duration: 1,
+          // stagger: 0.2,
+          // delay: 1,
+        });
+
         if (blockParent.class === "Channel") {
           const blockParentInfoEl = document.createElement("div");
           blockParentInfoEl.classList.add("block-info");
@@ -86,16 +94,13 @@ window.onload = function () {
             })
             .then((blockChildren) => {
               blockChildren.contents.forEach((block) => {
-                console.log(block);
-
+                // console.log(block.image.display);
                 const blockThumb = block.image.display.url;
                 const blockThumbEl = document.createElement("img");
                 const blockThumbAlt = block.title;
                 blockThumbEl.src = blockThumb;
                 blockThumbEl.alt = blockThumbAlt;
                 blockParentContentEl.appendChild(blockThumbEl);
-                console.log(blockThumbEl.offsetWidth);
-                blockThumbEl.width = blockThumbEl.offsetWidth;
               });
             });
         }
@@ -106,12 +111,4 @@ window.onload = function () {
     .catch((error) => {
       console.log(error);
     });
-
-  gsap.from(".channel", {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    stagger: 0.2,
-    delay: 1,
-  });
 };

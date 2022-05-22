@@ -8,20 +8,25 @@ body {
     gap: $padding-2x;
   }
 
+  @media screen and (max-width: $mobile) {
+    margin-top: $header-height;
+  }
+
   > * {
     padding: $padding;
   }
 }
 
 header {
-  position: sticky;
-  top: 0;
-  left: 0;
+  // position: sticky;
+  // top: 0;
+  // left: 0;
   flex-shrink: 0;
   transition: all $transition;
 
   @media screen and (max-width: $mobile) {
-    margin-bottom: $padding;
+    position: fixed;
+    inset: 0 0 auto 0;
     background: rgb(255, 255, 255);
     box-shadow: 0 0 5px $grey;
     // background: linear-gradient(
@@ -37,6 +42,12 @@ header {
   height: 100vh;
   gap: $padding;
   overflow-y: scroll;
+
+  @media screen and (max-width: $mobile) {
+    height: calc(100vh - $header-height);
+    padding-top: $padding-2x;
+    gap: $padding-2x;
+  }
 }
 
 .content {
