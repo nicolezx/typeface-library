@@ -23,7 +23,6 @@ window.onload = function () {
         channel.classList.add("channel");
         channel.id = blockParent.title;
         channel.dataset.toggled = false;
-        contentsParentEl.appendChild(channel);
 
         if (blockParent.class === "Channel") {
           const blockParentInfoEl = document.createElement("div");
@@ -95,12 +94,24 @@ window.onload = function () {
                 blockThumbEl.src = blockThumb;
                 blockThumbEl.alt = blockThumbAlt;
                 blockParentContentEl.appendChild(blockThumbEl);
+                console.log(blockThumbEl.offsetWidth);
+                blockThumbEl.width = blockThumbEl.offsetWidth;
               });
             });
         }
+
+        contentsParentEl.appendChild(channel);
       });
     })
     .catch((error) => {
       console.log(error);
     });
+
+  gsap.from(".channel", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    stagger: 0.2,
+    delay: 1,
+  });
 };

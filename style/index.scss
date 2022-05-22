@@ -1,10 +1,12 @@
 @import "global";
 
 body {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: $padding-2x;
+  @media screen and (min-width: $mobile) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: $padding-2x;
+  }
 
   > * {
     padding: $padding;
@@ -16,10 +18,22 @@ header {
   top: 0;
   left: 0;
   flex-shrink: 0;
+  transition: all $transition;
+
+  @media screen and (max-width: $mobile) {
+    margin-bottom: $padding;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 5px $grey;
+    // background: linear-gradient(
+    //   180deg,
+    //   rgba(255, 0, 0, 0.8) 33%,
+    //   rgba(255, 0, 0, 0) 100%
+    // );
+  }
 }
 
 .content {
-  max-width: 800px;
+  max-width: 1000px;
   height: 100vh;
   gap: $padding;
   overflow-y: scroll;
@@ -37,9 +51,18 @@ header {
   .channel {
     width: 100%;
     display: flex;
-    // flex-direction: column-reverse;
-    flex-direction: row;
-    gap: $padding-2x;
+
+    @media screen and (min-width: $mobile) {
+      // flex-direction: column-reverse;
+      flex-direction: row;
+      gap: $padding-2x;
+    }
+
+    @media screen and (max-width: $mobile) {
+      // flex-direction: column-reverse;
+      flex-direction: column;
+      gap: $padding;
+    }
 
     .block-info {
       flex: 1;
