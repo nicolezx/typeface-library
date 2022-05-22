@@ -1,7 +1,7 @@
 window.onload = function () {
   const channelSlug = "typeface-library";
   // Fetch channel data
-  fetch(`http://api.are.na/v2/channels/${channelSlug}`)
+  fetch(`https://api.are.na/v2/channels/${channelSlug}`)
     .then((reponse) => {
       return reponse.json();
     })
@@ -37,7 +37,7 @@ window.onload = function () {
           blockParentInfoEl.appendChild(blockParentMetaEl);
 
           const blockParentSlug = blockParent.slug;
-          fetch(`http://api.are.na/v2/channels/${blockParentSlug}/contents`)
+          fetch(`https://api.are.na/v2/channels/${blockParentSlug}/contents`)
             .then((response) => {
               return response.json();
             })
@@ -64,7 +64,7 @@ window.onload = function () {
 };
 
 // Fetch channel contents
-// fetch(`http://api.are.na/v2/channels/${channelSlug}/contents`)
+// fetch(`https://api.are.na/v2/channels/${channelSlug}/contents`)
 //   .then((reponse) => {
 //     return reponse.json();
 //   })
