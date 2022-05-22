@@ -1,1 +1,29 @@
 @import "global";
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: $padding-2x;
+}
+
+.content {
+  width: 50vw;
+  gap: $padding;
+}
+
+.content {
+  > .channel,
+  > .block {
+    padding: $padding;
+    border: $border-black;
+    flex: 1;
+  }
+
+  .channel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: $padding;
+  }
+}

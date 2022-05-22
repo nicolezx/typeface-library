@@ -8,12 +8,13 @@
 
 // Variables ----------------------
 
-$font-primary: "Font", Arial, sans-serif;
+$font-primary: "Courier New", Arial, sans-serif;
 $black: #000000;
 $accent: #8c7d71;
 $grey: #cccccc;
 $white: #ffffff;
 $white-50: rgba(255, 255, 255, 0.5);
+$border-black: 1px solid $black;
 
 $padding: 12px;
 $padding-xs: 8px;
@@ -21,10 +22,10 @@ $padding-2x: calc(2 * $padding);
 $padding-3x: calc(3 * $padding);
 
 $gap: 12px;
-$text-body: 16px;
+$text-body: 14px;
 $heading-body: 32px;
 $heading-body-line: calc(1 * $text-body);
-$text-body-line: calc(1.25 * $text-body);
+$text-body-line: calc(1.2 * $text-body);
 $text-xs: 12px;
 
 $transition: 0.3s ease-in-out;
@@ -51,7 +52,8 @@ html {
 
 body {
   font-size: $text-body;
-  line-height: $heading-body-line;
+  line-height: $text-body-line;
+  padding: $padding;
 }
 
 // Sizing -------------------------

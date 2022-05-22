@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 16px;
-  font-family: "Font", Arial, sans-serif;
+  font-size: 14px;
+  font-family: "Courier New", Arial, sans-serif;
   font-weight: 400;
   letter-spacing: 0em;
 }
@@ -13,8 +13,9 @@ html {
 }
 
 body {
-  font-size: 16px;
-  line-height: 16px;
+  font-size: 14px;
+  line-height: 16.8px;
+  padding: 12px;
 }
 
 .full-y {
@@ -98,6 +99,31 @@ img {
   .tablet {
     display: none;
   }
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.content {
+  width: 50vw;
+  gap: 12px;
+}
+
+.content > .channel,
+.content > .block {
+  padding: 12px;
+  border: 1px solid #000000;
+  flex: 1;
+}
+.content .channel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 /*# sourceMappingURL=index.css.map */
