@@ -15,7 +15,6 @@ html {
 body {
   font-size: 14px;
   line-height: 16.8px;
-  padding: 12px;
 }
 
 .full-y {
@@ -77,6 +76,7 @@ li {
 img {
   width: 100%;
   height: auto;
+  display: block;
 }
 
 .np {
@@ -107,10 +107,21 @@ body {
   justify-content: space-between;
   gap: 24px;
 }
+body > * {
+  padding: 12px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+}
 
 .content {
-  width: 50vw;
+  height: 100vh;
+  flex: 1;
   gap: 12px;
+  overflow-y: scroll;
 }
 
 .content > .channel,
@@ -122,8 +133,39 @@ body {
 .content .channel {
   width: 100%;
   display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+.content .channel .block-info {
+  flex: 1;
+  display: flex;
   flex-direction: column;
   gap: 12px;
+  justify-content: flex-start;
+}
+.content .channel .block-content {
+  flex: 2;
+}
+.channel {
+  transition: height 0.3s ease-in;
+}
+.channel img {
+  transition: height 0.3s ease-in;
+}
+.channel[data-toggled=false] img:nth-of-type(n + 3) {
+  height: max-content;
+}
+.channel[data-toggled=false] img:nth-of-type(n + 3) {
+  height: 0px;
+  overflow: hidden;
+}
+
+input {
+  display: none;
+}
+
+label {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=index.css.map */
