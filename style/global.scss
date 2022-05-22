@@ -29,7 +29,7 @@ $text-body-line: calc(1.2 * $text-body);
 $text-xs: 12px;
 
 $transition: 0.3s ease-in-out;
-$opacity: 0.3;
+$opacity: 0.5;
 
 $mobile: 40em; // 640px
 $tablet: 50em; // 800px
@@ -119,6 +119,11 @@ body {
 a {
   color: unset;
   text-decoration: none;
+  transition: opacity $transition;
+
+  &:hover {
+    opacity: $opacity;
+  }
 }
 
 li {

@@ -67,6 +67,10 @@ body {
 a {
   color: unset;
   text-decoration: none;
+  transition: opacity 0.3s ease-in-out;
+}
+a:hover {
+  opacity: 0.5;
 }
 
 li {
@@ -115,11 +119,12 @@ header {
   position: sticky;
   top: 0;
   left: 0;
+  flex-shrink: 0;
 }
 
 .content {
+  max-width: 800px;
   height: 100vh;
-  flex: 1;
   gap: 12px;
   overflow-y: scroll;
 }
@@ -129,12 +134,13 @@ header {
   padding: 12px;
   border: 1px solid #000000;
   flex: 1;
+  flex-grow: 0;
 }
 .content .channel {
   width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 12px;
+  gap: 24px;
 }
 .content .channel .block-info {
   flex: 1;
@@ -150,12 +156,14 @@ header {
   transition: height 0.3s ease-in;
 }
 .channel img {
-  transition: height 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
-.channel[data-toggled=false] img:nth-of-type(n + 3) {
+.channel[data-toggled=true] img:nth-of-type(n + 4) {
   height: max-content;
+  opacity: 1;
 }
-.channel[data-toggled=false] img:nth-of-type(n + 3) {
+.channel[data-toggled=false] img:nth-of-type(n + 4) {
+  opacity: 0;
   height: 0px;
   overflow: hidden;
 }
@@ -166,6 +174,10 @@ input {
 
 label {
   cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+label:hover {
+  opacity: 0.5;
 }
 
 /*# sourceMappingURL=index.css.map */

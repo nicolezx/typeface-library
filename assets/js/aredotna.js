@@ -12,15 +12,16 @@ window.onload = function () {
       const title = channel.title;
       titleEl.innerHTML = title;
 
-      const authorEl = document.querySelector("h2");
-      const author = channel.user.full_name;
-      authorEl.innerHTML = "Channel by " + author;
+      // const authorEl = document.querySelector("h2");
+      // const author = channel.user.full_name;
+      // authorEl.innerHTML = "Channel by " + author;
 
       channel.contents.forEach((blockParent) => {
-        console.log(blockParent);
+        // console.log(blockParent);
         const contentsParentEl = document.querySelector("div.content");
         const channel = document.createElement("div");
         channel.classList.add("channel");
+        channel.id = blockParent.title;
         channel.dataset.toggled = false;
         contentsParentEl.appendChild(channel);
 
@@ -66,11 +67,14 @@ window.onload = function () {
             const thisChannel = this.closest("div.channel");
             // console.log(this.checked);
             if (this.checked) {
-              console.log("checked");
               thisChannel.dataset.toggled = "true";
               thisLabel.innerHTML = "[-] show less";
+              thisChannel.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest",
+              });
             } else {
-              console.log("unchecked");
               thisChannel.dataset.toggled = "false";
               thisLabel.innerHTML = "[+] show more";
             }
@@ -82,12 +86,10 @@ window.onload = function () {
               return response.json();
             })
             .then((blockChildren) => {
-              // console.log(blockChildren);
-
               blockChildren.contents.forEach((block) => {
-                // console.log(block);
+                console.log(block);
 
-                const blockThumb = block.image.original.url;
+                const blockThumb = block.image.display.url;
                 const blockThumbEl = document.createElement("img");
                 const blockThumbAlt = block.title;
                 blockThumbEl.src = blockThumb;
