@@ -119,7 +119,7 @@ header {
 
   &[data-toggled="true"] {
     img:nth-of-type(n + 4) {
-      height: max-content;
+      height: auto;
       opacity: 1;
     }
   }

@@ -189,7 +189,7 @@ header {
   transition: all 0.3s ease-in;
 }
 .channel[data-toggled=true] img:nth-of-type(n + 4) {
-  height: max-content;
+  height: auto;
   opacity: 1;
 }
 .channel[data-toggled=false] img:nth-of-type(n + 4) {
