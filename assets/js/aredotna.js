@@ -1,7 +1,7 @@
 window.onload = function () {
   const channelSlug = "typeface-library";
   // Fetch channel data
-  fetch(`https://api.are.na/v2/channels/${channelSlug}`)
+  fetch(`https://api.are.na/v2/channels/${channelSlug}/contents`)
     .then((reponse) => {
       return reponse.json();
     })
